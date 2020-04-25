@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
     (1..NODES_NUM).each do |j|
         config.vm.define "k8s-n-#{j}" do |node|
             node.vm.box = IMAGE_NAME
-            node.vm.network "private_network", ip: "#{IP_BASE}#{j + IP_STATIC_START - 1 + MASTERS_NUM}"
+            node.vm.network "public_network", ip: "#{IP_BASE}#{j + IP_STATIC_START - 1 + MASTERS_NUM}"
             node.vm.hostname = "k8s-n-#{j}"
             node.vm.provision "ansible" do |ansible|
                 ansible.playbook = "roles/k8s.yml"
