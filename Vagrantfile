@@ -4,7 +4,7 @@ MASTERS_NUM = 1
 MEM = 2048
 CPU = 2
 NODES_NUM = 2
-IP_BASE = "192.168.50."
+IP_BASE = "192.168.86."
 IP_STATIC_START = 200
 
 Vagrant.configure("2") do |config|
